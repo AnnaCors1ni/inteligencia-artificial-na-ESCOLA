@@ -1,69 +1,51 @@
-import { aleatorio, nome } from './aleatorio.js';
-import { perguntas } from './perguntas.js';
-
-const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPerguntas = document.querySelector(".caixa-perguntas");
-const caixaAlternativas = document.querySelector(".caixa-alternativas");
-const caixaResultado = document.querySelector(".caixa-resultado");
-const textoResultado = document.querySelector(".texto-resultado");
-const botaoJogarNovamente = document.querySelector(".novamente-btn");
-
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
-
-function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
-        return;
-    }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-function mostraAlternativas() {
-    for (const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
+.quiz-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-    historiaFinal += afirmacoes + " ";
-    if (opcaoSelecionada.proxima !== undefined) {
-        atual = opcaoSelecionada.proxima;
-    } else {
-        mostraResultado();
-        return;
-    }
-    mostraPergunta();
+h1 {
+    font-size: 24px;
+    color: #333;
 }
 
-function mostraResultado() {
-    caixaPerguntas.textContent = `Em 2049, ${nome}`;
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
-    caixaResultado.classList.add("mostrar");
-    botaoJogarNovamente.addEventListener("click", jogaNovamente);
+.question-container {
+    margin: 20px 0;
 }
 
-function jogaNovamente() {
-    atual = 0;
-    historiaFinal = "";
-    caixaResultado.classList.remove("mostrar");
-    mostraPergunta();
+.answer-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-function substituiNome() {
-    for (const pergunta of perguntas) {
-        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
-    }
+.answer-btn:hover {
+    background-color: #45a049;
 }
 
-substituiNome();
-mostraPergunta();
+.result-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
