@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz: IA no Cotidiano</title>
     <link rel="stylesheet" href="style.css">
+    <title>Você decide o futuro da IA</title>
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Quiz: Como a IA impacta seu cotidiano?</h1>
-        <div class="question-container">
-            <p id="question-text">Aqui vai a primeira pergunta...</p>
-        </div>
-        <div class="answers-container">
-            <button class="answer-btn" onclick="nextQuestion(0)">Resposta 1</button>
-            <button class="answer-btn" onclick="nextQuestion(1)">Resposta 2</button>
-        </div>
-        <div class="result-container" style="display:none;">
-            <h2>Você completou o quiz!</h2>
-            <p id="result-text">Aqui vai o resultado das suas respostas.</p>
-            <button onclick="restartQuiz()">Reiniciar Quiz</button>
+    <div class="caixa-principal">
+        <h1>Você decide o futuro da IA</h1>
+        <div class="caixa-perguntas"></div>
+        <div class="caixa-alternativas"></div>
+        <div class="caixa-resultado">
+            <p class="texto-resultado"></p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
