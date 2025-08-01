@@ -6,34 +6,32 @@ const textoResultado = document.querySelector(".texto-resultado"); },
     const perguntas = [
   {
     enunciado:
-      "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+      "Logo após sair da escola, você encontra uma nova tecnologia: um chat capaz de responder qualquer dúvida e também criar imagens e áudios extremamente realistas. O que vem à sua mente?",
     alternativas: [
       {
-        texto: "Isso é assustador!",
+        texto: "Isso é bem assustador!",
         afirmacao: [
-          "No início ficou com medo do que essa tecnologia pode fazer. ",
-          "Achou assustador pensar na velocidade na qual a tecnologia está avançando.",
+          "Você ficou surpreso com as possibilidades que essa tecnologia oferece e a sensação de não saber até onde ela pode chegar.",
         ],
       },
       {
-        texto: "Isso é maravilhoso!",
+        texto: "Isso é incrível!",
         afirmacao: [
-          "Quis saber como usar IA no seu dia a dia.",
-          "Foi atrás de vídeos, artigos e mais informaçõe sobre como utilizar essa tecnologia.",
+         "Você ficou empolgado e imediatamente quis entender como poderia utilizar essa IA no seu cotidiano.",
         ],
       },
     ],
   },
 ];
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+        enunciado: "Após aprender sobre a IA, sua professora, Alessandra, decidiu fazer uma série de aulas sobre o tema. No final de uma delas, ela pede que você escreva um trabalho sobre como a IA pode ser usada em sala de aula. O que você faz?",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "Usa uma ferramenta de busca baseada em IA para ajudar a encontrar informações e explicações que tornem o conteúdo mais acessível.",
+                afirmacao: "Você se apoiou na IA para encontrar informações de qualidade e simplificadas sobre o tema."
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "Pesquisou na internet de maneira tradicional e usou seus próprios conhecimentos para escrever o trabalho.",
+                afirmacao: "Você preferiu confiar no seu próprio processo de pesquisa e na sua experiência para fazer o trabalho."
             }
         ]
     },
@@ -51,28 +49,30 @@ const textoResultado = document.querySelector(".texto-resultado"); },
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Depois de entregar o trabalho, a professora promove um debate para entender como foi feita a pesquisa. Durante a conversa, a questão do impacto da IA no futuro dos empregos é discutida. Qual é a sua opinião?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Acredito que a IA pode abrir novas portas no mercado de trabalho e servir como um suporte importante para as pessoas.",
+                afirmacao: "Você vê a IA como uma ferramenta de inovação que pode criar novos empregos e melhorar a eficiência de várias áreas."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "Estou preocupado com os empregos que podem ser substituídos pelas máquinas, e acho que devemos pensar em maneiras de proteger os trabalhadores.",
+                afirmacao: "Sua preocupação com os trabalhadores levou você a defender o uso ético da IA e a criar um grupo para estudar os impactos dela nas profissões."
+
+
             }
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        enunciado: "Após o debate, você tem que criar uma imagem no computador que represente sua visão sobre a IA. O que você faz?",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
+                texto:"Cria uma imagem usando uma plataforma tradicional de design, como o Paint.",
+                afirmacao: "Você percebeu que muitas pessoas ainda têm dificuldades com ferramentas simples de design, então resolveu compartilhar o que sabe sobre pintura digital com os iniciantes."
             },
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                texto: "Usa um gerador de imagens baseado em IA para criar uma imagem que represente sua opinião sobre a tecnologia.",
+                afirmacao: "Você agilizou a criação do trabalho usando uma IA para gerar imagens, e agora ensina quem tem dificuldades de desenhar a usar essa ferramenta."
             }
         ]
     },
@@ -104,10 +104,10 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+historiaFinal += afirmacoes + “ “;
+atual++;
+mostraPergunta();
 }
 
 function mostraResultado() {
@@ -117,4 +117,5 @@ function mostraResultado() {
 }
 
 mostraPergunta();
+
 
